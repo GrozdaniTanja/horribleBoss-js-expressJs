@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Search </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+  <style>
+	.faikona{
+	color:#ffc451;
+	margin: 8px 2px;
+	}
+  .comment {
+    border: 1px solid #f8e002e8;
+    background-color: #fff;  
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px
+}
+
+.comment h4,
+.comment span,
+.darker h4,
+.darker span {
+    display: inline
+}
+
+.comment p{
+  color: rgb(3, 3, 3)
+}
+.comment span,
+.darker p,
+.darker span {
+    color: rgb(184, 183, 183)
+}
+.cursor {
+    cursor: pointer
+}
+	.fa {
+		cursor: pointer
+	}
+  </style>
+</head>
+<body onload="nalozi();">
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Horrible Boss <span>.</span></a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="search.html">Explore </a></li>
+          <li class="nav-item">
+            <a id="new" class="nav-link" href="newcompany.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-plus" viewBox="0 0 16 16">
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+              </svg> Add company </a>
+          </li>
+          <li><a class="nav-link scrollto " id="admin" href="admin.html">Administration segment</a></li>
+          <div id="prijavljen1">
+            <li class="dropdown"><a href="#"><span>My profile</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="myprofile.html">Profile </a></li>
+                <li><a href="changePassword.html">Change password</a></li>
+                <li><a href="#" onclick="odjavi();">Log-out</a></li>
+              </ul>
+            </li>
+            </div>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <a href="login.html" class=" get-started-btn scrollto" id="ni_prijavljen">Login </a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="breadcrumbs" id="search">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Explore Companies </h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Explore Companies</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <!-----Search page-------->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Search </h3>
+              <form onkeydown="return event.key != 'Enter';" id="forma">
+                <div class="form-group">
+                  <input type="text" class="form-control w-100" id="naziv" placeholder="Enter company name">
+                </div>
+                <br>
+                <div class="form-group">
+                  <select class="form-select" name="Branch" id="branza">
+                    <option value="" disabled selected hidden>Select branch</option>
+                    <option>Science &amp; Technology</option>
+                    <option>Fashion &amp; Design</option>
+                    <option>Food &amp; Beverage</option>
+                    <option>Transport &amp; Utilities</option>
+                    <option>Law services</option>
+                    <option>Furniture &amp; Housing</option>
+                    <option>Arts, culture and entertainment</option>
+                    <option>Education</option>
+                    <option>Installation and maintenance</option>
+                    <option>Business and administration</option>
+                  </select>
+                </div>
+                <br>
+                <div class="form-group">
+                  <select class="form-select" name="Location" id="lokacija">
+                    <option value="" disabled selected hidden>Select Location</option>
+                    <option>Mura</option>
+                    <option>Drava</option>
+                    <option>Carinthia</option>
+                    <option>Savinja</option>
+                    <option>Central Sava</option>
+                    <option>Lower Sava</option>
+                    <option>Southeast Slovenia</option>
+                    <option>Carniola</option>
+                    <option>Central Slovenia</option>
+                    <option>Upper Carniola</option>
+                    <option>Gorizia</option>
+                    <option>Coastal-Karst</option>
+                  </select>
+                </div>
+                <br>
+                <div class="btn btn-light" onclick="naloziLastnike()" id="submit">Search</div>
+              </form>
+            </div>
+            <div class="portfolio-description">
+              <h2>Search by map </h2>
+              <img class="img-responsive mx-auto d-none d-xl-block" src="images/map.jpg" alt="map" usemap="#image-map"
+                style="width: 400px;">
+              <map name="image-map">
+                <area target="" alt="" title="" href="search.html?{'lokacija':'Gorizia'}" coords="6,110,32,83,53,87,45,104,57,119,75,126,82,140,95,161,90,181,82,194,69,194,42,194,30,193,40,160,21,159,42,128,21,114" 
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Upper Carniola"}'
+                  coords="44,80,45,68,69,71,89,76,102,80,133,86,144,96,148,114,131,125,117,137,104,145,97,152,90,145,97,126,86,113,67,112,54,106,67,87,53,77,45,80"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Coastal-Karst"}'
+                  coords="32,245,59,241,71,229,50,199,67,201,89,208,91,251,78,245,75,252,64,263,36,254"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Carniola"}'
+                  coords="98,251,94,195,142,186,148,217,134,251,111,247"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Central Slovenia"}'
+                  coords="192,131,205,126,222,129,228,136,219,143,209,149,210,140,199,141"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Central Sava"}'
+                  coords="97,180,103,164,114,145,127,146,157,115,157,101,175,119,186,116,181,132,209,153,189,166,184,191,171,189,155,190,146,178,115,175,108,178"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Southeast Slovenia"}'
+                  coords="157,203,166,197,182,210,202,172,223,169,235,181,251,176,251,196,239,207,241,221,240,257,231,257,206,251,191,245,187,250,169,244,167,234,161,227,156,210"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Lower Sava"}'
+                  coords="226,154,239,157,263,154,274,159,292,164,290,187,262,189,254,166,235,169"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Savinja"}'
+                  coords="161,86,167,80,178,85,209,80,234,93,250,83,262,97,276,102,278,113,299,114,284,120,281,135,281,146,290,153,282,155,275,146,244,145,230,124,202,121,195,109,173,109,171,102,167,99,171,102"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Carinthia"}'
+                  coords="44,80,45,68,69,71,89,76,102,80,133,86,144,96,148,114,131,125,117,137,104,145,97,152,90,145,97,126,86,113,67,112,54,106,67,87,53,77,45,80"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Drava"}'
+                  coords="250,73,257,58,267,58,291,32,314,40,332,65,354,75,361,78,364,88,347,83,337,96,311,111,285,105,278,93,266,88,266,77"
+                  shape="poly">
+                <area target="" alt="" title="" href='search.html?{"lokacija":"Mura"}'
+                  coords="361,68,338,62,316,32,340,40,334,13,367,5,371,20,379,34,379,46,396,63,377,57"
+                  shape="poly">
+              </map>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="row">
+              <table id="tabelaLastnikov"></table>
+              <div class="col-lg-12" id="companies">
+                <!--<div class="card d-flex m-4 border border-danger" style="border-radius: 40px; padding: 20px;">
+                  <div class="card-text">
+                    <h3 class="card-title mb-4">Meet IT</h3>
+                    <div class="card-image mt-4 mb-4"> <img class="img-fluid d-flex mx-auto rounded-circle"
+                        src="logo.png" align="right" style="float: right; clear: right"
+                        height="200px" width="200px"></div>
+                    <br>We organize science camps on which students freely explore
+                    topics they love and meet other
+                    passionates. Our experience proved that intensive work in a closed environment
+                    noticeably
+                    boosts participants’ skills and motivation. <br>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span> <br>
+                  </div>
+                  <br>
+                  <div class="footer"></a></span>  <div class="col-sm-3 text-align-center">
+                    
+                    <a class="btn btn-outline-danger" href="company.html">Learn More</a>
+                  </div></div>
+                </div>-->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+ 
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+				<br>
+				<br>
+				<br>
+				<h3>Horrible Boss <span>.</span></h3>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Explore companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Rate companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="newcompany.html">Add your own companies</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Contact us</h4>
+            <ul class="mx-2">
+              <li><a href="#"><i class="fa fa-lg fa-map-marker faikona"> </i>Koroška cesta 46<br>2000 Maribor, Slovenija</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-phone faikona"> </i>*386 69 69 69</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-envelope faikona"> </i>info@horribleboss.si</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Follow us</h4>
+			<i class="fa fa-lg fa-linkedin faikona"> </i> linkedin.com/horribleboss<br>
+			<i class="fa fa-lg fa-facebook-f faikona"> </i> facebook.com/horribleboss<br>
+			<i class="fa fa-lg fa-twitter faikona"> </i> twitter.com/@horribleboss<br>
+			<i class="fa fa-lg fa-instagram faikona"> </i> instagram.com/@horribleboss<br>
+			<i class="fa fa-lg fa-pinterest faikona"> </i> pinterest.com/horribleboss<br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Horrible Boss</span></strong>. 2021
+      </div>
+    </div>
+  </footer>
+  <script src="../backend/search.js"></script>
+  <script src="../backend/spremeniUporabnik.js"></script>
+
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

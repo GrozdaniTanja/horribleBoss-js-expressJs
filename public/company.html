@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Horrible Boss</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.js.map " rel="stylesheet">
+  
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js'></script>
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+  <style>
+  	.faikona{
+	color:#ffc451;
+	margin: 8px 2px;
+	}
+#clicked {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+    width: 100%;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px
+}
+
+
+#takeOwnership, #editCompanyBtn, #post {
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 40%
+}
+#reply{
+    border: 1px solid #f8e002e8;
+}
+.comment {
+    border: 1px solid #f8e002e8;
+    background-color: #fff;  
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px
+}
+
+.comment h4,
+.comment span,
+.darker h4,
+.darker span {
+    display: inline
+}
+
+.comment p{
+  color: rgb(3, 3, 3)
+}
+.comment span,
+.darker p,
+.darker span {
+    color: rgb(184, 183, 183)
+}
+.cursor {
+    cursor: pointer
+}
+.fa {
+    cursor: pointer
+}
+  </style>
+</head>
+
+<body onload="naloziPodjetje(); nalozi();">
+  <header id="header" class="fixed-top header-inner-pages ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Horrible Boss <span>.</span></a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="search.html">Explore </a></li>
+          <li class="nav-item">
+            <a id="new" class="nav-link" href="newcompany.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-plus" viewBox="0 0 16 16">
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+              </svg> Add company </a>
+          </li>
+          <li><a class="nav-link scrollto " id="admin" href="admin.html">Administration segment</a></li>
+          <div id="prijavljen1">
+            <li class="dropdown"><a href="#"><span>My profile</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="myprofile.html">Profile </a></li>
+                <li><a href="changePassword.html">Change password</a></li>
+                <li><a href="#" onclick="odjavi();">Log-out</a></li>
+              </ul>
+            </li>
+            </div>
+          </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <a href="login.html" class="get-started-btn scrollto"id="ni_prijavljen">Login </a>
+    </div>
+  </header>
+    <!-- ======= Hero Section ======= -->
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+          <div class="container">
+            <div class="d-flex justify-content-between align-items-center  mt-4">                           
+              <h2 id="naziv"><img class="rounded-circle "  src="" id="logotip" alt=" " width=40px height=40px  > </h2>            
+            </div>
+    
+          </div>
+        </section><!-- End Breadcrumbs -->
+    
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+          <div class="container">
+    
+            <div class="row gy-4">
+              <div class="col-lg-4">
+                <div class="portfolio-info">
+                  <h3>Company information</h3>
+                  <ul>
+                    <li id="branzha"><strong>Branch:</strong></li>
+                    <li id="lokacija"><strong>Location:</strong></li>
+                    <li id="telefon"><strong>Telephone:</strong></li>
+                    <li id="email"><strong>Email:</strong> </li>
+                    <li id="spletnaStran"><strong>WebSite:</strong> <a href=""></a></li>
+                    <li id="socialnePovezave"><strong>LinkedIn:</strong> <a href=""></a></li>
+                    <li id="velikostPodjetja"><strong>Number of employees:</strong></a></li>
+                    <li> <button  class="mt-2" value="Enter" type="button" id="takeOwnership" style="border-radius: 20px; display:none;" data-toggle="modal" data-target="#uploadModal">Take ownership</button></li>                
+                    <li> <button  class="mt-2" value="Enter" type="button" id="editCompanyBtn" style="border-radius: 20px; display:none;" onclick="funkcijaEdit()">Edit company</button></li> 
+                  </ul>
+                </div>
+                <div class="portfolio-info"  id="show">
+                  <h3 >Company Rating</h3>
+                      <div class="ratings" style="padding: 59px;"> <span class="product-rating "style="font-size: 30px" id="ocenaOd5">4.6</span><span>/5</span>
+                          <div class="stars" > <i class="fa fa-star" id="oo51"></i> <i class="fa fa-star" id="oo52"></i> <i class="fa fa-star" id="oo53"></i> <i class="fa fa-star" id="oo54"></i> <i class="fa fa-star" id="oo55"></i>  </div>
+                        </div>
+                      </div>                  
+              </div>
+              <div class="col-lg-8">
+                <div class="portfolio-description">
+                  <h2>About us</h2>
+                  <div class="card-text" id="opis">
+                  
+                </div>
+                </div>
+                <br>
+                <div class="portfolio-description">
+                    <div id="map" style="width:100%; height:320px;float:center;"></div>
+                  
+                </div>                 
+              </div> 
+            </div>
+            <br>
+            <br>
+            <div class="row gy-4" >
+              <div class="col-lg-12">
+                <div class="portfolio-info" id="holl">
+                  <h3>Comments & Review</h3>                 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-12 col-md-5 col-12 pb-4" id="komentari">
+                          <div id="komentari"></div>
+                                                   
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 offset-md-1 offset-sm-1 col-12 mt-2" id="formakom">
+                            <form id="algin-form"  action="http://localhost:3000/komentar" method="POST">
+                                <div class="form-group">
+                                    <h4>Leave a comment</h4><br> <textarea placeholder="Comment.." id="tekst" name="vsebina" msg cols="40" rows="2" class="form-control" style="background-color: rgb(252, 252, 252);"></textarea>
+                                </div>                                
+                                <div class="bg-white rounded shadow-sm p-3 mb-3 ">
+                                  <div class="row">
+                                    <div class="col-6">
+                                      <span mt-2 text-right">Atmosphere</span>
+                                      <br>
+                                      <br>
+                                      <span class="mb-2">Work-balance</span>
+                                      <br>
+                                      <br>
+                                      <span class="mb-2">Organization</span>
+                                      <br>
+                                      <br>
+                                      <span class="mb-2">Difficulty</span>
+                                    </div>
+                                    <div class="col-6">                 
+                                      <span class="star-rating">
+                                          <i class="fa fa-star" id="rating_a1" onclick="setAtmosfera(1);"></i>
+                                          <i class="fa fa-star" id="rating_a2" onclick="setAtmosfera(2);"></i>
+                                          <i class="fa fa-star" id="rating_a3" onclick="setAtmosfera(3);"></i>
+                                          <i class="fa fa-star" id="rating_a4" onclick="setAtmosfera(4);"></i>
+                                          <i class="fa fa-star" id="rating_a5" onclick="setAtmosfera(5);"></i>
+                                      </span>
+                                        <br>     
+                                        <br>                            
+                                        <span class="star-rating">
+                                            <i class="fa fa-star" id="rating_b1" onclick="setBalance(1);"></i>
+                                            <i class="fa fa-star" id="rating_b2" onclick="setBalance(2);"></i>
+                                            <i class="fa fa-star" id="rating_b3" onclick="setBalance(3);"></i>
+                                            <i class="fa fa-star" id="rating_b4" onclick="setBalance(4);"></i>
+                                            <i class="fa fa-star" id="rating_b5" onclick="setBalance(5);"></i>
+                                        </span> 
+                                        <br>                                   
+                                        <br>    
+                                        <span class="star-rating ">
+                                            <i class="fa fa-star" id="rating_o1" onclick="setOrganization(1);"></i>
+                                            <i class="fa fa-star" id="rating_o2" onclick="setOrganization(2);"></i>
+                                            <i class="fa fa-star" id="rating_o3" onclick="setOrganization(3);"></i>
+                                            <i class="fa fa-star" id="rating_o4" onclick="setOrganization(4);"></i>
+                                            <i class="fa fa-star" id="rating_o5" onclick="setOrganization(5);"></i>
+                                        </span>
+                                        <br>
+                                        <br>    
+                                        <span class="star-rating ">
+                                            <i class="fa fa-star" id="rating_d1" onclick="setDiff(1);"></i>
+                                            <i class="fa fa-star" id="rating_d2" onclick="setDiff(2);"></i>
+                                            <i class="fa fa-star" id="rating_d3" onclick="setDiff(3);"></i>
+                                            <i class="fa fa-star" id="rating_d4" onclick="setDiff(4);"></i>
+                                            <i class="fa fa-star" id="rating_d5" onclick="setDiff(5);"></i>
+                                        </span>
+                                    </div>
+                                    <div class="mt-2 text-right"> <button  onclick="postSe(); naloziPodjetje();" value="Enter" type="button" id="post" class="btn">Post</button> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+    
+          </div>
+        </section><!-- End Portfolio Details Section -->
+
+        <!-- Modal -->
+        <div id="uploadModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title">Take ownership</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                      <!-- Form -->
+                      <form method='POST' action='http://localhost:3000/lastnistvo' enctype="multipart/form-data">  
+                          <input type="hidden" id="uporabnik_id" name="uporabnik_id" value="1">
+                          <input type="hidden" id="podjetje_id" name="podjetje_id" value="1">
+                          <input type="hidden" id="odobritev" name="odobritev" value="0">
+                          Select an image of a document which proves your ownership of the company: <input type='file' name='file' id='file' class='form-control pb-5 pt-2' ><br>
+                          <button type='submit' onclick="refresh()" class='btn btn-danger' value='Upload' id='post'>Upload</button><br>
+                      </form>
+                  </div>
+              </div>
+
+          </div>
+          </div>
+    
+      </main><!-- End #main -->
+    
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+				<br>
+				<br>
+				<br>
+				<h3>Horrible Boss <span>.</span></h3>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Explore companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Rate companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="newcompany.html">Add your own companies</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Contact us</h4>
+            <ul class="mx-2">
+              <li><a href="#"><i class="fa fa-lg fa-map-marker faikona"> </i>Koroška cesta 46<br>2000 Maribor, Slovenija</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-phone faikona"> </i>*386 69 69 69</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-envelope faikona"> </i>info@horribleboss.si</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Follow us</h4>
+			<i class="fa fa-lg fa-linkedin faikona"> </i> linkedin.com/horribleboss<br>
+			<i class="fa fa-lg fa-facebook-f faikona"> </i> facebook.com/horribleboss<br>
+			<i class="fa fa-lg fa-twitter faikona"> </i> twitter.com/@horribleboss<br>
+			<i class="fa fa-lg fa-instagram faikona"> </i> instagram.com/@horribleboss<br>
+			<i class="fa fa-lg fa-pinterest faikona"> </i> pinterest.com/horribleboss<br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Horrible Boss</span></strong>. 2021
+      </div>
+    </div>
+  </footer>
+    
+      <div id="preloader"></div>
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+      <script src="assets/vendor/purecounter/purecounter.js"></script>
+      
+
+      <script src="../assets/js/main.js"></script>
+      <script src="../assets/vendor/swiper/swiper-bundle.min.js.map"></script>
+      <!-- TSubPages File -->
+      <script src="../backend/podjetje_prova.js"></script>
+      <script src="../backend/spremeniUporabnik.js"></script>
+     
+     
+    
+    </body>
+    
+    </html>

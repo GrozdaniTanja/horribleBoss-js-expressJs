@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Login</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+  <style>
+    .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+     background-color: rgb(231, 174, 16);
+     box-shadow:0 0 3px rgb(226, 194, 9); }
+	.faikona{
+	color:#ffc451;
+	margin: 8px 2px;
+	}
+  </style>
+</head>
+
+<body onload="nalozi();">
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Horrible Boss <span>.</span></a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto " href="search.html">Explore </a></li>
+          <li class="nav-item">
+            <a id="new" class="nav-link" href="newcompany.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-plus" viewBox="0 0 16 16">
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+              </svg> Add company </a>
+          </li>
+          <li><a class="nav-link scrollto " id="admin" href="admin.html">Administration segment</a></li>
+          <div id="prijavljen1">
+            <li class="dropdown"><a href="#"><span>My profile</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="myprofile.html">Profile </a></li>
+                <li><a href="changePassword.html">Change password</a></li>
+                <li><a href="#" onclick="odjavi();">Log-out</a></li>
+              </ul>
+            </li>
+            </div>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <a href="login.html" class=" get-started-btn scrollto" id="ni_prijavljen">Login </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Login </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3 style="text-align: center;">Login </h3>
+              <p id='informacije' style="display: none;">Wrong password</p>
+              <form id="loginForm" action="http://localhost:3000/login" method="POST" onsubmit="login()">
+                <div class="form-group mb-3">
+                   <input type="text" class="form-control w-100" id="email" name="email" placeholder="Email" required="" autofocus="">
+                </div>
+                <div class="form-group mb-3">
+                  <input id="password" type="password" placeholder="Password" required=""
+                    class="form-control w-100" name="password">
+                </div>
+              <br>
+                <input type="submit" class="btn btn-warning btn-block text-uppercase mb-2 " value="Sign in">
+                <div class="text-center d-flex justify-content-between mt-4">
+                  <p><b>Don't have an account yet ? <a href="register.html" class="font-italic text-muted">
+                      <u>Click here to register </b> </u></a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+				<br>
+				<br>
+				<br>
+				<h3>Horrible Boss <span>.</span></h3>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Explore companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Rate companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="newcompany.html">Add your own companies</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Contact us</h4>
+            <ul class="mx-2">
+              <li><a href="#"><i class="fa fa-lg fa-map-marker faikona"> </i>Koroška cesta 46<br>2000 Maribor, Slovenija</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-phone faikona"> </i>*386 69 69 69</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-envelope faikona"> </i>info@horribleboss.si</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Follow us</h4>
+			<i class="fa fa-lg fa-linkedin faikona"> </i> linkedin.com/horribleboss<br>
+			<i class="fa fa-lg fa-facebook-f faikona"> </i> facebook.com/horribleboss<br>
+			<i class="fa fa-lg fa-twitter faikona"> </i> twitter.com/@horribleboss<br>
+			<i class="fa fa-lg fa-instagram faikona"> </i> instagram.com/@horribleboss<br>
+			<i class="fa fa-lg fa-pinterest faikona"> </i> pinterest.com/horribleboss<br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Horrible Boss</span></strong>. 2021
+      </div>
+    </div>
+  </footer>
+  <script src="../backend/prijava.js"></script>
+  <script src="../backend/spremeniUporabnik.js"></script>
+
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

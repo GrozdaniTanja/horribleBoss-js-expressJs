@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Horrible Boss </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+  <style>
+	.faikona{
+	color:#ffc451;
+	margin: 8px 2px;
+	}
+  </style>
+</head>
+
+<body onload="nalozi()">
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Horrible Boss <span>.</span></a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="search.html">Explore </a></li>
+          <li class="nav-item">
+            <a id="new" class="nav-link" href="newcompany.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-plus" viewBox="0 0 16 16">
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+              </svg> Add company </a>
+          </li>
+          <li><a class="nav-link scrollto " id="admin" href="admin.html">Administration segment</a></li>
+          <div id="prijavljen1">
+            <li class="dropdown"><a href="#"><span>My profile</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="myprofile.html">Profile </a></li>
+                <li><a href="changePassword.html">Change password</a></li>
+                <li><a href="#" onclick="odjavi();">Log-out</a></li>
+              </ul>
+            </li>
+            </div>
+          </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <a href="login.html" class="get-started-btn scrollto"id="ni_prijavljen">Login </a>
+    </div>
+  </header>
+
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>We help you find your dream company<span>.</span></h1>
+          <h2>Explore top-rated companies in your region</h2>
+        </div>
+      </div>
+      <div class="row gy-2 mt-3 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-xl-4 col-md-6">
+      <!----------Index search---------->
+          <form>
+          <div class="form-group">
+            <input type="text" class="form-control w-100" id="naziv" placeholder="Enter company name">
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-4">
+          <div class="form-group">
+            <select class="form-select" name="Branch" id="branza" >
+              <option value="" disabled selected hidden>Select branch</option>
+              <option>Science &amp; Technology</option>
+              <option>Fashion &amp; Design</option>
+              <option>Food &amp; Beverage</option>
+              <option>Transport &amp; Utilities</option>
+              <option>Law services</option>
+              <option>Furniture &amp; Housing</option>
+              <option>Arts, culture and entertainment</option>
+              <option>Education</option>
+              <option>Installation and maintenance</option>
+              <option>Business and administration</option>
+            </select>          
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-4">
+          <div class="form-group">
+            <select class="form-select" name="Location" id="lokacija">
+              <option value="" disabled selected hidden>Select Location</option>
+              <option>Mura</option>
+              <option>Drava</option>
+              <option>Carinthia</option>
+              <option>Savinja</option>
+              <option>Central Sava</option>
+              <option>Lower Sava</option>
+              <option>Southeast Slovenia</option>
+              <option>Carniola</option>
+              <option>Central Slovenia</option>
+              <option>Upper Carniola</option>
+              <option>Gorizia</option>
+              <option>Coastal-Karst</option>
+            </select>    
+          </div>
+        </div>
+        <div class="col-xl-1 col-md-4">
+        <button type="button" class="btn btn-warning" onclick="openSearch()"> Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <main id="main">
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Check our Team</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Filip Djajkov</h4>
+                <span>Founder</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Veronija Kodovska</h4>
+                <span>Founder</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="../assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Tanja Grozdani</h4>
+                <span>Founder</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="../assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Emilija Dunoska</h4>
+                <span>Founder</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="../assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4> Costumer </h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Really great service, enjoyed working with Horrible Boss. Great office in Maribor, they were so professional and i found my dream job and company thanks to them! 
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="../assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Costumer </h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  We found this company by accident and are so glad we did! We will definitely be working with themnext time we’re in town. 
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="../assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer </h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  We found this company by accident and are so glad we did! We will definitely be working with themnext time we’re in town. 
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="../assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Really great service, enjoyed working with Horrible Boss. Great office in Maribor, they were so professional and i found my dream job and company thanks to them! 
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+				<br>
+				<br>
+				<br>
+				<h3>Horrible Boss <span>.</span></h3>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Explore companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="search.html">Rate companies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="newcompany.html">Add your own companies</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Contact us</h4>
+            <ul class="mx-2">
+              <li><a href="#"><i class="fa fa-lg fa-map-marker faikona"> </i>Koroška cesta 46<br>2000 Maribor, Slovenija</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-phone faikona"> </i>*386 69 69 69</a></li>
+              <li><a href="#"><i class="fa fa-lg fa-envelope faikona"> </i>info@horribleboss.si</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Follow us</h4>
+			<i class="fa fa-lg fa-linkedin faikona"> </i> linkedin.com/horribleboss<br>
+			<i class="fa fa-lg fa-facebook-f faikona"> </i> facebook.com/horribleboss<br>
+			<i class="fa fa-lg fa-twitter faikona"> </i> twitter.com/@horribleboss<br>
+			<i class="fa fa-lg fa-instagram faikona"> </i> instagram.com/@horribleboss<br>
+			<i class="fa fa-lg fa-pinterest faikona"> </i> pinterest.com/horribleboss<br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Horrible Boss</span></strong>. 2021
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../backend/index.js"></script>
+  <script src="../backend/spremeniUporabnik.js"></script>
+
+
+
+</body>
+
+</html>
