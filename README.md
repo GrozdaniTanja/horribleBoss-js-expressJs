@@ -5,7 +5,7 @@ A website where people can find their dream company to work.
 
 
 # HorribleBoss
-The Slovenia Company Finder is a web-based platform designed to help users find companies in Slovenia easily. It offers an intuitive interface where registered users can search for companies, leave reviews, and make informed decisions. Companies can also create and manage their profiles to enhance their online presence.
+The HorribleBoss is a web-based platform designed to help users find companies in Slovenia easily. It offers an intuitive interface where registered users can search for companies, leave reviews, and make informed decisions. Companies can also create and manage their profiles to enhance their online presence.
 
 # Features
 User Profiles: Registered users have their personalized profiles, allowing them to manage their activity and submitted reviews.
