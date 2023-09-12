@@ -2,6 +2,7 @@
 A website where people can find their dream company to work. 
 ![HorribleBoss](https://github.com/GrozdaniTanja/horribleBoss-js-expressJs/assets/74705132/287b6ea1-1670-4c73-b698-a451b3e8f605)
 ![Screenshot 2023-08-04 162309](https://github.com/GrozdaniTanja/horribleBoss-js-expressJs/assets/74705132/4327b0f6-6b51-4a2f-9cd8-80e8c69b4f78)
+![H2](https://github.com/GrozdaniTanja/horribleBoss-js-expressJs/assets/74705132/5c477260-ef22-4a8a-896c-40644598dd36)
 
 
 # HorribleBoss
